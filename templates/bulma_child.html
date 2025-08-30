@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 <section class="section">
   <div class="container">
     <section class="hero">
@@ -8,7 +9,7 @@
             <img src="/static/npr.png" alt="NPR image" class="is-60x180" style="width: 360px; height: 120px" />
           </h1>
         </div>
-        <hr>
+        <hr />
         <p class="subtitle has-text-centered">{{ feed.feed.subtitle }}</p>
         <p class="has-text-centered">{{ feed.feed.updated }}</p>
       </div>
