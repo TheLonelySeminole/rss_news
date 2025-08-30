@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bob's NPR News Feed</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="has-text-centered">
+            <h1>
+              <img src="/static/npr.png" alt="NPR image" class="is-60x180" style="width: 360px; height: 120px" />
+            </h1>
+          </div>
+          <!-- <h1 class="title has-text-centered"> {{ feed.feed.title }} </h1> -->
+          <hr />
+          <p class="subtitle has-text-centered">{{ feed.feed.subtitle }}</p>
+        </div>
+      </section>
+      <section class="section">
+        <ul class="list">
+          {% for entry in feed.entries %}
+          <li>
+            <a href="{{ entry.link }}" class="title is-6 has-text-link">{{entry.title}}
+            </a>
+            <p class="subtitle mb-1 is-7">{{ entry.description }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </section>
+  <footer class="footer p-1">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bob's NPR News Feed</strong> by <a href="https://github.com/TheLonelySeminole">The Lonely Seminole</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
