@@ -22,4 +22,6 @@ async def read_root(request: Request):
 async def read_bulma(request: Request):
     rss_url = "https://feeds.npr.org/1001/rss.xml"
     d = feedparser.parse(rss_url)
-    return templates.TemplateResponse("bulma.html", {"feed": d, "request": request})
+    return templates.TemplateResponse(
+        "bulma_child.html", {"feed": d, "request": request}
+    )
